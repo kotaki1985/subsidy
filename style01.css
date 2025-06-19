@@ -1,0 +1,449 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", sans-serif;
+  color: #333;
+  background-color: #f5f9fc;
+}
+
+.main-visual {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  padding: 0px 0px 80px 0px
+}
+
+.overlay-text {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  color: white;
+  z-index: 2;
+}
+
+.overlay-text .startup {
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.overlay-text h1 {
+  font-size: 60px;
+  line-height: 1.4;
+  color: white;
+  font-weight: bold;
+}
+
+.image-side {
+  flex: 1;
+  min-width: 300px;
+  position: relative;
+}
+
+.image-side::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 17px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to left,
+    rgba(55, 81, 99, 0.6) 0%,
+    rgba(55, 81, 99, 0.4) 10%,
+    rgba(55, 81, 99, 0) 40%
+  );
+  mix-blend-mode: multiply;
+  z-index: 1;
+  border-radius: 0 0 57px 0;
+}
+
+.image-side img {
+  width: 103%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  object-position: 0% 50%;
+  border-radius: 0 0 53px 0;
+}
+
+.text-side {
+  flex: 1;
+  min-width: 300px;
+  padding: 60px 40px;
+  /* background-color: #f5f9fc; */
+  position: relative;
+}
+
+.title {
+  position: relative;
+  z-index: 2;
+}
+
+.startup {
+  font-size: 35px;
+  letter-spacing: 2px;
+  color: #fff;
+  margin-bottom: 0px;
+  position: relative;
+  left: -139px; /* 「STAR」が画像に被るように左寄せ */
+  font-weight: bold;
+}
+
+.overlap {
+  color: #567f9d;
+}
+
+.title h1 {
+  font-size: 60px;
+  line-height: 1.4;
+  color: #567f9d;
+  position: relative;
+}
+
+.highlight {
+  display: inline-block;
+  position: relative;
+  left: -143px; /* 「中小」「新事」が画像に被る */
+  font-size: 60px;
+  color: white;
+}
+
+.highlight-min {
+  display: inline-block;
+  position: relative;
+  left: -137px;
+  font-size: 60px;
+}
+
+.text-side h1 {
+  font-size: 36px;
+  color: #567f9d;
+  line-height: 1.4;
+  margin-bottom: 30px;
+}
+
+.description p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+.small-middle-text {
+  color: #335065;
+  font-weight: bold;
+}
+
+.small-text {
+  font-size: 14px;
+  color: #567f9d;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 25px;
+  background-color: #4982ae;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #3b6a90;
+}
+
+.deadline-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: linear-gradient(to right, #5b7c9c 0%, #5b7c9c 35%, transparent 35%); */
+  padding: 20px 40px;
+  margin-top: -51px;
+}
+
+.deadline-label {
+  background-color: #5b7c9c;
+  color: white;
+  padding: 20px 50px;
+  font-weight: bold;
+  border-radius: 6px 0 0 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.deadline-info {
+  background-color: white;
+  padding: 22px 70px;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  color: #333;
+  box-shadow: 0 4px 12px rgba(53, 83, 108, 0.15);
+}
+
+/* 左画像右テキスト */
+
+.image-text-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px 0px 20px 69px;
+  box-sizing: border-box;
+}
+
+.image-left {
+  width: 40%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.text-right {
+  width: 60%;
+}
+
+.text-right h2 {
+  margin-bottom: 4px;
+}
+
+.text-right-main {
+  color: #5b7c9c;
+}
+
+.text-right-main-sub {
+  line-height: 1.7;
+  max-width: 401px;
+  font-size: 14px;
+  color: #5b7c9c;
+}
+
+@media screen and (max-width: 768px) {
+  .image-text-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .image-left,
+  .text-right {
+    width: 100%;
+  }
+}
+
+/* 表 */
+
+.table-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.styled-table {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 6px 6px;
+  /* background-color: #fff; */
+  /* box-shadow: 0 2px 8px rgba(0,0,0,0.1); */
+  text-align: center;
+}
+
+.styled-table th,
+.styled-table td {
+  /* border: 1px solid #ddd; */
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: #5b7c9c;
+}
+
+.styled-table th {
+  background-color: #5b7c9c;
+  color: white;
+}
+
+.styled-table tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+.styled-table tr:nth-child(even) {
+  background-color: #fff;
+}
+
+.styled-table .align-left {
+  text-align: left;
+  font-size: 12px;
+  color: #5b7c9c;
+  background-color: #fff;
+}
+
+/* 導線バナー */
+/* .banner-wire {
+  background-image: url('./img/wire_banner.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 60px 60px;
+  color: white;
+} */
+
+.banner-wire {
+  background-image: url('./img/wire_banner.jpg'); /* 適宜変更 */
+  background-size: cover;
+  background-position: center;
+  height: 210px; /* 高さ調整可 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  color: white;
+  padding: 0 20px;
+  margin: 54px auto
+}
+
+.banner-wire-content {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  gap: 164px;
+}
+
+.text-area {
+  font-weight: bold;
+}
+
+.headline-wire {
+  font-size: 24px;
+  margin: 0;
+}
+
+.subtext-wire {
+  font-size: 16px;
+  margin: 5px 0 0;
+}
+
+.cta-button-wire {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right, #be1f1f, #e40000);
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.cta-button-wire .free {
+  background-color: white;
+  color: #e40000;
+  padding: 5px 10px;
+  border-radius: 2px;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.cta-button-wire .label {
+  margin-right: 10px;
+}
+
+.cta-button-wire .arrow {
+  font-size: 16px;
+}
+
+/* 表2 */
+
+.table-title02 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.table-wrapper02 {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 640px;
+  margin: 0 auto 40px;
+}
+
+.styled-table02 {
+  width: 100%;
+  /* max-width: 125px; */
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 6px 6px;
+  background-color: #fff;
+  /* box-shadow: 0 2px 8px rgba(0,0,0,0.1); */
+  text-align: center;
+}
+
+.image-text-block {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 22px;
+  max-width: 1000px;
+  margin: 0 auto;
+  /* padding: 40px 20px; */
+}
+
+.image-area img {
+  max-width: 140px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* 丸みが不要なら削除 */
+}
+
+.text-area02 {
+  max-width: 600px;
+  color: #5b7c9c;
+}
+
+.title02 {
+  font-size: 24px;
+  font-weight: bold;
+  /* margin: 0 0 10px; */
+  /* color: #333; */
+}
+
+.subtitle {
+  font-size: 16px;
+  /* color: #666; */
+}
+
+.styled-table02 th,
+.styled-table02 td {
+  /* border: 1px solid #ddd; */
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: #5b7c9c;
+}
+
+.styled-table02 th {
+  background-color: #5b7c9c;
+  color: white;
+}
+
+.styled-table02 tr:nth-child(odd) {
+  background-color: #f5f9fc;
+}
+
+.styled-table02 tr:nth-child(even) {
+  background-color: #f5f9fc;
+}
+
+.styled-table02 .align-left02 {
+  text-align: left;
+  font-size: 12px;
+  color: #5b7c9c;
+  background-color: #fff;
+}
